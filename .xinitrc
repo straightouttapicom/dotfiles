@@ -1,12 +1,16 @@
-#xrandr --output HDMI-0 --rotate left &
-/home/joey/.screenlayout/good_settings.sh &
-
 nitrogen --restore &
-
 xrdb ~/.Xresources &
-
 bar &
+xcompmgr -c &
 
-xcompmgr &
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
 
-exec dwm
+setxkbmap -model pc104 -layout us,de,dk,ru -option grp:alt_shift_space_toggle &
+
+sh /home/joey/.screenlayout/good_settings.sh &
+exec dwm &
+
+xbindkeys &
+
+vesktop
